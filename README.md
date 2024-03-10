@@ -9,23 +9,24 @@
 
 **Date:** 2017 - 2021
 
-**People:** Wenqiang PU, Jinjun XIAO, Tao Zhang, Zhi-Quan LUO
+**People:** Wenqiang PU
 
 **Optimization Problem:** 
 
-$$
+```math
 \begin{equation*}
 \begin{aligned}
-\min_{\mathbf{w},\bm{\epsilon}}\ & \mathbf{w}^H\mathbf{R}\mathbf{w}+\mu\max_{k}\{ \gamma_k \epsilon_k   \}\\
+\min_{\mathbf{w},{\epsilon}}\ & \mathbf{w}^H\mathbf{R}\mathbf{w}+\mu\max_{k}\{ \gamma_k \epsilon_k   \}\\
 \textrm{s.t.}\ &|\mathbf{w}^H\mathbf{a}_\theta-1| + \delta \| \mathbf{w}\|\leq c_\theta,\ \forall \theta\in\Theta,\\
 & |\mathbf{w}^H\mathbf{a}_\phi| + \delta\|\mathbf{w} \|\leq \epsilon_k c_\phi,\ \forall \phi\in\Phi_k,\ \forall k.
 \end{aligned}
 \end{equation*}
-$$
+```
+
 
 - $\mathbf{w}$ — beamformer
-- $\bm{\epsilon}$  — auxillary variable
-- $\mathbf{a}_\theta, \ \mathbf{a}_\phi$ — steering vector
+- ${\epsilon}$  — auxillary variable
+- $\mathbf{a}_{\theta}$, $\mathbf{a}_{\phi}$ — steering vector
 - $c_\theta, c_\phi, \gamma_k, \mu, \delta$ — user specified parameters
 - $\mathbf{R}$ — PSD matrix, e.g., identity matrix $\mathbf{I}$, sample mean covariance matrix
 
@@ -33,15 +34,20 @@ $$
 
 **Example 1: Robust Beam Pattern Synthesis** 
 
-**Setting:** 30$\times$30 array, 7 null region with more than 1000 inequality constraints
+**Setting:** 30 $\times$ 30 array, 7 null region with more than 1000 inequality constraints
 
-![alt text](pattern_7nulls.jpg)
-
+<div align=center>
+ <img src="pattern_7nulls.jpg" width="50%" height="50%" alt="Beam Pattern" align=center />
+</div>
 **Example 2: Speech Enhancement of Mic. Array**
 
 **Setting:** 4 mic., 4 interferences and 1 target source.
-![alt text](scpic.png)
 
-![alt text](bppicmv.png)
+<div align=center>
+ <img src="scpic.png" width="40%" height="40%" alt="Beam Pattern" align=center />
+ <img src="bppicmv.png" width="50%" height="50%" alt="Beam Pattern" align=center />
+</div>
+
+
 
 **Reference:** Pu, W., Xiao, J., Zhang, T., & Luo, Z. Q. (2023). A penalized inequality-constrained approach for robust beamforming with dof limitation. *Signal Processing*, *202*, 108746.
